@@ -1,0 +1,67 @@
+.jumbotron {
+    padding: 0px;
+    box-shadow: 10px 10px 25px grey;
+    padding: 30px;
+    background-color: #f7f7f7;
+}
+
+.navbar-brand-centered{
+  text-align: center;
+  width: 100%;
+}
+
+/*********************************************/
+
+#index-container{
+  margin: 50px auto 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#login-index-container{
+  /*padding: 10px;
+  background-color: white;*/
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 25px grey;
+  width: 500px;
+}
+
+#login-container{
+  margin: 50px auto 0;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 20px 20px 50px grey;
+  width: 500px;
+}
+
+/*Sign Up Page*/
+#signup-container{
+  margin: 50px auto 0;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 20px 20px 50px grey;
+  width: 500px;
+}
+
+/*Log In Page
+#login-container{
+    margin: 50px auto 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 30px;
+}
+*/
+
+/*Home Page*/
+#home-container{
+  margin: 50px auto 0;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 30px;
+}

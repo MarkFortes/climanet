@@ -10,8 +10,9 @@
 
   foreach ($records_list as $record) {
     echo "<tr>";
-    echo "<td>" . $record["check_record"] . "</td>";
-    echo "<td>" . $record["departure_record"] . "</td>";
+    echo "<td>" . $record["datetime_record"] . "</td>";
+    echo "<td>" . $record["temperature_record"] . " ºC</td>";
+    echo "<td>" . $record["humidity_record"] . " %</td>";
     echo "</tr>";
   }
 

@@ -1,23 +1,23 @@
 <?php
 
-  require_once("../modelos/Connection.php");
-  require_once("../modelos/UsersManagament.php");
-  require_once("../modelos/ValidateData.php");
+  require_once("../models/Connection.php");
+  require_once("../models/UsersManagament.php");
+  require_once("../models/ValidateData.php");
 
-  if (isset($_POST["btnEnviar"])) {
-    $nick = $_POST["txtNickname"];
+  if (isset($_POST["btnSignup"])) {
+    $username = $_POST["txtUsername"];
     $email = $_POST["txtEmail"];
-    $pass = $_POST["txtPassword"];
+    $password = $_POST["txtPassword"];
 
     $conn = new Connection();
 
-      $nickAvailable;
+      $usernameAvailable;
       $emailAvailable;
       //Nickname disponible para asignar
-      if (ValidateData::existsNickname($conn, $nick) == false) {
-        $nickAvailable = true;
+      if (ValidateData::existsUsername($conn, $username) == false) {
+        $usernameAvailable = true;
       }else {
-        $nickAvailable = false;
+        $usernameAvailable = false;
         echo "Nombre de usuario ya registrado.";
       }
 
@@ -28,11 +28,11 @@
         echo "Email ya registrado.";
       }
 
-      if ($nickAvailable == true && $emailAvailable == true) {
-        UsersManagament::createUser($conn, $nick, $pass, $email);
+      if ($usernameAvailable == true && $emailAvailable == true) {
+        UsersManagament::createUser($conn, $username, $password, $email);
         header("Location:../login.php");
       }else {
-        "Usuario no disponible";
+        echo "Usuario no disponible";
       }
   }
 
