@@ -29,7 +29,7 @@
       <div class="row">
         <div class="col-md-12 no-padding">
           <h1>Crear cuenta</h1>
-          <form action="controllers/validateUserController.php" method="post">
+          <form action="controllers/createUserController.php" method="post">
             <div class="form-group">
               <label><b>Nombre de usuario</b></label>
               <input type="text" class="form-control" name="txtUsername" required>
@@ -43,7 +43,7 @@
               <input type="password" class="form-control" name="txtPassword" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="btnValidate">Entrar</button>
+              <button type="submit" class="btn btn-primary" name="btnSignup">Entrar</button>
             </div>
             <div class="form-group">
                 <p><a href="#">¿Has olvidado tu contraseña?</a></p>

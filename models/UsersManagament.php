@@ -18,8 +18,8 @@
     public static function createUser($conn, $username, $password, $email){
       $query = "INSERT INTO users (username_user, password_user, email_user) VALUES (:username, :password, :email)";
       $stmt = $conn->getConnection()->prepare($query);
-      $stmt->bindValue(":nick", $username);
-      $stmt->bindValue(":pass", $password);
+      $stmt->bindValue(":username", $username);
+      $stmt->bindValue(":password", $password);
       $stmt->bindValue(":email", $email);
       $stmt->execute();
       if ($stmt->rowCount() > 0) {

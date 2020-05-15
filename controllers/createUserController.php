@@ -11,29 +11,33 @@
 
     $conn = new Connection();
 
-      $usernameAvailable;
-      $emailAvailable;
-      //Nickname disponible para asignar
-      if (ValidateData::existsUsername($conn, $username) == false) {
-        $usernameAvailable = true;
-      }else {
-        $usernameAvailable = false;
-        echo "Nombre de usuario ya registrado.";
-      }
+    $usernameAvailable;
+    $emailAvailable;
 
-      if (ValidateData::existsEmail($conn, $email) == false) {
-        $emailAvailable = true;
-      }else {
-        $emailAvailable = false;
-        echo "Email ya registrado.";
-      }
+    if (ValidateData::existsUsername($conn, $username) == false) { //Username disponible para asignar
+      $usernameAvailable = true;
+      echo "Username disponible <br>";
+    }else {
+      $usernameAvailable = false;
+      echo "Nombre de usuario ya registrado. <br>";
+    }
 
-      if ($usernameAvailable == true && $emailAvailable == true) {
-        UsersManagament::createUser($conn, $username, $password, $email);
-        header("Location:../login.php");
-      }else {
-        echo "Usuario no disponible";
-      }
+    if (ValidateData::existsEmail($conn, $email) == false) { //Password disponible para asignar
+      $emailAvailable = true;
+      echo "Email disponible. <br>";
+    }else {
+      $emailAvailable = false;
+      echo "Email ya registrado. <br>";
+    }
+
+    if ($usernameAvailable == true && $emailAvailable == true) {
+      UsersManagament::createUser($conn, $username, $password, $email);
+      header("Location:../login.php");
+    }else {
+      echo "Usuario no disponible";
+    }
+  }else {
+    echo "Se ha producido un error al crear la cuenta de usuario";
   }
 
 ?>
