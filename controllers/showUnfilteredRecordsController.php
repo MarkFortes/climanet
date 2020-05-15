@@ -5,8 +5,7 @@
   require_once("models/UsersManagament.php");
 
   $conn = new Connection();
-  $id_user = $_SESSION["id_user"];
-  $records_list = Records::showRecords($conn,$id_user);
+  $records_list = Records::showUnfilteredRecords($conn);
 
   foreach ($records_list as $record) {
     echo "<tr>";
