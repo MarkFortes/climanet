@@ -19,26 +19,29 @@ EthernetClient client;
 
 //VARIABLES PROGRAMA
 int led = 8; //led verde
-int t = 20; //temperatura
-int h = 25; //humedad
+float t; //temperatura
+float h; //humedad
+const unsigned long second = 1000;
+const unsigned long minute = 60000;
+const unsigned long hour = 3600*second;
 
 void setup() {
   Serial.begin(9600);
-  
+
   dht.begin(); // Inicializa el sensor
   lcd.begin(16,2); //define el número de columnas y filas, respectivamente, de la pantalla lcd
   pinMode(led, OUTPUT); //inicializacion del led como salida
 
   while(!Serial){
-      
+
   }
 }
 
 void loop() {
   delay(2000);
 
-  float t = dht.readTemperature(); //Guardamos el valor de la temperatura en t
-  float h = dht.readHumidity(); //Guardamos el valor de la humedad en h
+  t = dht.readTemperature(); //Guardamos el valor de la temperatura en t
+  h = dht.readHumidity(); //Guardamos el valor de la humedad en h
 
   if(isnan(t) || isnan(h)){ //Si los valores son incorrectos retorna al principio del loop
     Serial.println("Error en la lectura de temperatura y humedad!");
@@ -46,12 +49,10 @@ void loop() {
   }
 
   t = t - 7;
-  h = h + 10; 
+  h = h + 10;
 
   lcd.setCursor(0,0);
-  lcd.print("Temp: " + String(t) + (char)223 + "C");  //(char)223 = º
-  lcd.setCursor(0,1);
-  lcd.print("Hum: " + String(h) + "%");
+  lcd.print(String(t) + (char)223 + "C " + String(h) + "%");  //(char)223 = º
 
   //----------------CONEXION ARDUINO-MYSQL----------------
 
@@ -60,7 +61,6 @@ void loop() {
     Ethernet.begin(mac,ipClient);
   }
 
-  delay(20000);
   Serial.println("connecting...");
 
   if(client.connect(ipServer, 80)){
@@ -68,10 +68,10 @@ void loop() {
     digitalWrite(led, true);
     delay(1000);
     /*client.print("GET /arduino_mysql/mysql.php?temperature=61&humidity=94");*/
-    client.print("GET /climanet/controllers/createRecordController.php?temperature=");  
+    client.print("GET /climanet/controllers/createRecordController.php?temperature=");
     client.print(t);
     client.print("&humidity=");
-    client.print(h);  
+    client.print(h);
     client.println(" HTTP/1.0");
     client.println("Connection: close");
     client.println();
@@ -95,4 +95,11 @@ void loop() {
 
     while(true);
   }
+
+  for(int timer = 60; timer > 0; timer--){
+    lcd.setCursor(0,1);
+    lcd.print("Reload in: " + String(timer) + "min");
+    delay(minute);
+  }
+
 }
