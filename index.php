@@ -43,13 +43,13 @@
               <input type="password" class="form-control" name="txtPassword" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="btnSignup">Entrar</button>
+              <button type="submit" class="btn btn-primary" name="btnSignup">Registrar</button>
             </div>
             <div class="form-group">
                 <p><a href="#">¿Has olvidado tu contraseña?</a></p>
             </div>
             <div class="form-group">
-                <p><a href="#">¿Ya eres miembro de Climanet?</a></p>
+                <p><a href="./login.php">¿Ya eres miembro de Climanet?</a></p>
             </div>
           </form>
         </div>

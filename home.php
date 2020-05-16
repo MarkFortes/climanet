@@ -28,47 +28,49 @@
       <form action="" method="post">
         <div class="form-group">
           <label>Desde: </label>
-          <input type="date" class="form-control" name="txtCalendarFrom" id="txtCalendarFrom" required>
+          <input type="date" class="form-control" name="txtCalendarFrom" required>
         </div>
         <div class="form-group">
           <label>Hasta: </label>
-          <input type="date" class="form-control" name="txtCalendarTo" id="txtCalendarTo" required>
+          <input type="date" class="form-control" name="txtCalendarTo" required>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary" name="btnFilter">Filtrar</button>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary" name="btnFilterBetweenDates">Filtrar</button>
         </div>
       </form>
     </div>
     <div class="col-md-8">
       <div class="row text-center">
         <div class="col-md-12">
-          <button type="button" class="btn btn-outline-danger">Mes más caliente</button>
-          <button type="button" class="btn btn-outline-danger">Día más caliente</button>
-          <button type="button" class="btn btn-outline-primary">Mes más frío</button>
-          <button type="button" class="btn btn-outline-primary">Día más frío</button>
+          <form action="" method="post">
+            <button type="input" class="btn btn-outline-danger" name="btnMaxTempRecord">Temperatura más alta</button>
+            <button type="input" class="btn btn-outline-danger" name="btnMaxHumRecord">Humedad más alta</button>
+          </form>
+        </div>
+        <div class="col-md-12">
+          <form action="" method="post">
+            <button type="input" class="btn btn-outline-primary" name="btnMinTempRecord">Temperatura más baja</button>
+            <button type="input" class="btn btn-outline-primary" name="btnMinHumRecord">Humedad más baja</button>
+          </form>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-md-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Fecha y hora</th>
-                <th scope="col">Temperatura</th>
-                <th scope="col">Humedad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-                if (isset($_POST["btnFilter"])) {
-                  include_once("./controllers/showFilteredRecordsController.php");
-                }else {
-                  include_once("./controllers/showUnfilteredRecordsController.php");
-                }
-              ?>
-            </tbody>
-          </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha y hora</th>
+                  <th scope="col">Temperatura</th>
+                  <th scope="col">Humedad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  include_once("./controllers/showRecordsController.php");
+                ?>
+              </tbody>
+            </table>
         </div>
       </div>
     </div>

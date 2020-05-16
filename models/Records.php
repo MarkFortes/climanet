@@ -16,20 +16,53 @@
     }
 
     public static function showUnfilteredRecords($conn){
-      $query = "SELECT * FROM records ORDER BY id_record DESC";
+      $query = "SELECT * FROM records ORDER BY id_record DESC LIMIT 100";
       $stmt = $conn->getConnection()->prepare($query);
       $stmt->execute();
       $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $movements_list;
     }
 
-    public static function showFilteredRecords($conn, $from, $to){
+    public static function showFilterBetweenDates($conn, $from, $to){
       $query = "SELECT * FROM records WHERE datetime_record > '$from' AND datetime_record < '$to 23:59:59' ORDER BY id_record DESC";
       $stmt = $conn->getConnection()->prepare($query);
       $stmt->execute();
       $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $movements_list;
     }
+
+    public static function showMaxTempRecord($conn){
+      $query = "SELECT * FROM records WHERE temperature_record = (SELECT MAX(temperature_record) FROM records) ORDER BY id_record DESC";
+      $stmt = $conn->getConnection()->prepare($query);
+      $stmt->execute();
+      $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $movements_list;
+    }
+
+    public static function showMinTempRecord($conn){
+      $query = "SELECT * FROM records WHERE temperature_record = (SELECT MIN(temperature_record) FROM records) ORDER BY id_record DESC";
+      $stmt = $conn->getConnection()->prepare($query);
+      $stmt->execute();
+      $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $movements_list;
+    }
+
+    public static function showMaxHumRecord($conn){
+      $query = "SELECT * FROM records WHERE humidity_record = (SELECT MAX(humidity_record) FROM records) ORDER BY id_record DESC";
+      $stmt = $conn->getConnection()->prepare($query);
+      $stmt->execute();
+      $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $movements_list;
+    }
+
+    public static function showMinHumRecord($conn){
+      $query = "SELECT * FROM records WHERE humidity_record = (SELECT MIN(humidity_record) FROM records) ORDER BY id_record DESC";
+      $stmt = $conn->getConnection()->prepare($query);
+      $stmt->execute();
+      $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $movements_list;
+    }
+
   }
 
 ?>
