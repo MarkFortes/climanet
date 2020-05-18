@@ -1,15 +1,14 @@
 <?php
-
-  //Imports the necessary classes
-  require_once("../models/Connection.php");
-  require_once("../models/UsersManagament.php");
-
   if (isset($_POST["btnLogin"])) {
+    //Imports the necessary classes
+    require_once("../models/Connection.php");
+    require_once("../models/UsersManagament.php");
+
+    //Imports header
+    require_once("../layouts/headerUnlogged.php");
+
     $email = $_POST["txtEmail"];
     $password = $_POST["txtPassword"];
-
-    echo $email . "<br>";
-    echo $password . "<br>";
 
     $conn = new Connection();
     if (UsersManagament::validateUser($conn,$email,$password) == true) {
@@ -18,8 +17,10 @@
       $_SESSION["id_user"] = $id_user;
       header("Location:../home.php");
     }else {
-      header("Location:../index.php");
+      include_once("../layouts/uncorrectUserValidationMessage.html");
     }
   }
 
+  //Imports footer
+  require_once("../layouts/footer.php");
 ?>
