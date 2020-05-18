@@ -65,11 +65,11 @@
           <form action="#tableRecords" method="post">
             <div class="form-group">
               <label>Desde: </label>
-              <input type="date" class="form-control" name="txtCalendarFrom" required>
+              <input type="date" class="form-control" name="txtCalendarFrom" id="txtCalendarFrom" required>
             </div>
             <div class="form-group">
               <label>Hasta: </label>
-              <input type="date" class="form-control" name="txtCalendarTo" required>
+              <input type="date" class="form-control" name="txtCalendarTo" id="txtCalendarTo" required>
             </div>
             <div class="form-group">
               <label>Más especificaciones: </label>
