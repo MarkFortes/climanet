@@ -29,13 +29,13 @@
         <div class="col-md-12">
           <form action="#tableRecords" method="post">
             <div class="form-group">
-              <label>Limitar registros: </label>
+              <label>Mostrar registros: </label>
               <select class="form-control" name="txtLimit">
-                <option>Todo</option>
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option>
+                <option>Todos</option>
+                <option>10 últimos</option>
+                <option>25 últimos</option>
+                <option>50 últimos</option>
+                <option>100 últimos</option>
               </select>
             </div>
             <div class="form-group text-center">
@@ -44,6 +44,7 @@
           </form>
         </div>
       </div>
+      <!--
       <hr style="border:0.5px solid black">
       <div class="row text-center">
         <div class="col-md-12">
@@ -52,6 +53,7 @@
             <button type="input" class="btn btn-outline-primary btn-block" name="btnMinTempRecord">Temperatura más baja</button>
           </form>
         </div>
+
         <div class="col-md-12">
           <form action="" method="post">
             <button type="input" class="btn btn-outline-danger btn-block" name="btnMaxHumRecord">Humedad más alta</button>
@@ -59,6 +61,7 @@
           </form>
         </div>
       </div>
+    -->
       <hr style="border:0.5px solid black">
       <div class="row">
         <div class="col-md-12">
