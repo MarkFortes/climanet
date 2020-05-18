@@ -111,6 +111,8 @@
   </div>
 </div>
 
+<!--Call to my own js functions-->
+<script src="js/getDate.js"></script>
 <script src="js/main.js"></script>
 
 <?php
