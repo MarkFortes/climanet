@@ -62,7 +62,7 @@
       <hr style="border:0.5px solid black">
       <div class="row">
         <div class="col-md-12">
-          <form action="" method="post">
+          <form action="#tableRecords" method="post">
             <div class="form-group">
               <label>Desde: </label>
               <input type="date" class="form-control" name="txtCalendarFrom" required>
@@ -89,9 +89,9 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div class="row">
+      <div class="row" id="tableRecords">
         <div class="col-md-12">
-            <table class="table" id="tableRecords">
+            <table class="table">
               <thead>
                 <tr>
                   <th scope="col">Fecha y hora</th>
