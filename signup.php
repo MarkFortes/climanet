@@ -32,7 +32,7 @@
               <button type="submit" class="btn btn-primary" name="btnSignup">Registrar</button>
             </div>
             <div class="form-group">
-                <p>¿Ya eres miembro de Climanet? <a href="#">¡Pulsa aquí!</a></p>
+                <p>¿Ya eres miembro de Climanet? <a href="login.php">¡Pulsa aquí!</a></p>
             </div>
           </form>
         </div>

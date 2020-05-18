@@ -28,7 +28,7 @@
               <button type="submit" class="btn btn-primary" name="btnLogin">Entrar</button>
             </div>
             <div class="form-group">
-                <p>¿Aún no eres miembro de Climanet? <a href="#">¡Pulsa aquí!</a></p>
+                <p>¿Aún no eres miembro de Climanet? <a href="signup.php">¡Pulsa aquí!</a></p>
             </div>
           </form>
         </div>

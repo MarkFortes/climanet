@@ -1,10 +1,14 @@
 <?php
 
-  require_once("../models/Connection.php");
-  require_once("../models/UsersManagament.php");
-  require_once("../models/ValidateData.php");
-
   if (isset($_POST["btnSignup"])) {
+    //Imports necessary classes
+    require_once("../models/Connection.php");
+    require_once("../models/UsersManagament.php");
+    require_once("../models/ValidateData.php");
+
+    //Imports header
+    require_once("../layouts/headerUnlogged.php");
+
     $username = $_POST["txtUsername"];
     $email = $_POST["txtEmail"];
     $password = $_POST["txtPassword"];
@@ -16,28 +20,28 @@
 
     if (ValidateData::existsUsername($conn, $username) == false) { //Username disponible para asignar
       $usernameAvailable = true;
-      echo "Username disponible <br>";
     }else {
       $usernameAvailable = false;
-      echo "Nombre de usuario ya registrado. <br>";
+      include_once("../layouts/existingUserMessage.html");
     }
 
     if (ValidateData::existsEmail($conn, $email) == false) { //Password disponible para asignar
       $emailAvailable = true;
-      echo "Email disponible. <br>";
     }else {
       $emailAvailable = false;
-      echo "Email ya registrado. <br>";
+      include_once("../layouts/existingEmailMessage.html");
     }
 
     if ($usernameAvailable == true && $emailAvailable == true) {
       UsersManagament::createUser($conn, $username, $password, $email);
-      header("Location:../login.php");
+      include_once("../layouts/correctUserCreationMessage.html");
     }else {
-      echo "Usuario no disponible";
+      include_once("../layouts/uncorrectUserCreationMessage.html");
     }
   }else {
-    echo "Se ha producido un error al crear la cuenta de usuario";
+
   }
 
+  //Imports footer
+  require_once("../layouts/footer.php");
 ?>
