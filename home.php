@@ -113,7 +113,7 @@
 
 <!--Call to my own js functions-->
 <script src="js/getDate.js"></script>
-<script src="js/main.js"></script>
+<script src="js/clsSignup.js"></script>
 
 <?php
   //Imports the footer

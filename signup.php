@@ -26,10 +26,10 @@
             </div>
             <div class="form-group">
               <label><b>Contraseña</b></label>
-              <input type="password" class="form-control" name="txtPassword" required>
+              <input type="password" class="form-control" name="txtPassword" id="txtPassword" oninput="ValidatePasswordFormat()" required>
             </div>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-primary" name="btnSignup">Registrar</button>
+              <button disabled type="submit" class="btn btn-primary" name="btnSignup" id="btnSignup">Registrar</button>
             </div>
             <div class="form-group">
                 <p>¿Ya eres miembro de Climanet? <a href="login.php">¡Pulsa aquí!</a></p>
@@ -38,6 +38,9 @@
         </div>
   </div>
 </div>
+
+<!--Call to my own js functions-->
+<script src="js/clsSignup.js"></script>
 
 <?php
   require_once("layouts/footer.php");

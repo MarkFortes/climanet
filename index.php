@@ -39,11 +39,11 @@
               <input type="email" class="form-control" name="txtEmail" required>
             </div>
             <div class="form-group">
-              <label><b>Contraseña</b></label>
-              <input type="password" class="form-control" name="txtPassword" required>
+              <label><b>Contraseña</b> <div style="font-size:11px">(mínimo: 8 carácteres, 1 mayúscula, 1 minúscula, 1 número)</div></label>
+              <input type="password" class="form-control" name="txtPassword" id="txtPassword" oninput="ValidatePasswordFormat()" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="btnSignup">Registrar</button>
+              <button type="submit" class="btn btn-primary" name="btnSignup" id="btnSignup" disabled>Registrar</button>
             </div>
             <div class="form-group">
                 <p><a href="#">¿Has olvidado tu contraseña?</a></p>
@@ -57,6 +57,9 @@
     </div>
   </div>
 </div>
+
+<!--Call to my own js functions-->
+<script src="js/clsSignup.js"></script>
 
 <?php
   require_once("layouts/footer.php");
