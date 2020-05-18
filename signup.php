@@ -25,10 +25,10 @@
               <input type="email" class="form-control" name="txtEmail" required>
             </div>
             <div class="form-group">
-              <label><b>Contraseña</b></label>
+              <label><b>Contraseña</b> <div style="font-size:11px">(mínimo: 8 carácteres, 1 mayúscula, 1 minúscula, 1 número)</div></label>
               <input type="password" class="form-control" name="txtPassword" id="txtPassword" oninput="ValidatePasswordFormat()" required>
             </div>
-            <div class="form-group text-center">
+            <div class="form-group">
               <button disabled type="submit" class="btn btn-primary" name="btnSignup" id="btnSignup">Registrar</button>
             </div>
             <div class="form-group">

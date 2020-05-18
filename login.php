@@ -24,7 +24,7 @@
               <label><b>Contraseña</b><a href="#"> ¿Has olvidado tu contraseña?</a></label>
               <input type="password" class="form-control" name="txtPassword" required>
             </div>
-            <div class="form-group text-center">
+            <div class="form-group">
               <button type="submit" class="btn btn-primary" name="btnLogin">Entrar</button>
             </div>
             <div class="form-group">
