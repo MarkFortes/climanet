@@ -2,7 +2,7 @@
   //Checks if the user has logged recently. If not, it will be redirected to index
   session_start();
   if (!isset($_SESSION["id_user"])) {
-    header("Location:index.php");
+    header("Location:login.php");
   }else {
     //Imports Classes
     require_once("models/Connection.php");
