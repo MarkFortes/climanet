@@ -25,36 +25,70 @@
   <hr>
   <div class="row">
     <div class="col-md-4">
-      <form action="" method="post">
-        <div class="form-group">
-          <label>Desde: </label>
-          <input type="date" class="form-control" name="txtCalendarFrom" required>
-        </div>
-        <div class="form-group">
-          <label>Hasta: </label>
-          <input type="date" class="form-control" name="txtCalendarTo" required>
-        </div>
-        <div class="form-group text-center">
-          <button type="submit" class="btn btn-primary" name="btnFilterBetweenDates">Filtrar</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-8">
-      <div class="row text-center">
+      <div class="row">
         <div class="col-md-12">
           <form action="" method="post">
-            <button type="input" class="btn btn-outline-danger" name="btnMaxTempRecord">Temperatura más alta</button>
-            <button type="input" class="btn btn-outline-danger" name="btnMaxHumRecord">Humedad más alta</button>
-          </form>
-        </div>
-        <div class="col-md-12">
-          <form action="" method="post">
-            <button type="input" class="btn btn-outline-primary" name="btnMinTempRecord">Temperatura más baja</button>
-            <button type="input" class="btn btn-outline-primary" name="btnMinHumRecord">Humedad más baja</button>
+            <div class="form-group">
+              <label>Limitar registros: </label>
+              <select class="form-control" name="txtLimit">
+                <option>Todo</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+              </select>
+            </div>
+            <div class="form-group text-center">
+              <button type="input" class="btn btn-primary btn-block" name="btnFilterLimit">Filtrar</button>
+            </div>
           </form>
         </div>
       </div>
-      <br>
+      <hr style="border:0.5px solid black">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <form action="" method="post">
+            <button type="input" class="btn btn-outline-danger btn-block" name="btnMaxTempRecord">Temperatura más alta</button>
+            <button type="input" class="btn btn-outline-primary btn-block" name="btnMinTempRecord">Temperatura más baja</button>
+          </form>
+        </div>
+        <div class="col-md-12">
+          <form action="" method="post">
+            <button type="input" class="btn btn-outline-danger btn-block" name="btnMaxHumRecord">Humedad más alta</button>
+            <button type="input" class="btn btn-outline-primary btn-block" name="btnMinHumRecord">Humedad más baja</button>
+          </form>
+        </div>
+      </div>
+      <hr style="border:0.5px solid black">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="" method="post">
+            <div class="form-group">
+              <label>Desde: </label>
+              <input type="date" class="form-control" name="txtCalendarFrom" required>
+            </div>
+            <div class="form-group">
+              <label>Hasta: </label>
+              <input type="date" class="form-control" name="txtCalendarTo" required>
+            </div>
+            <div class="form-group">
+              <label>Más especificaciones: </label>
+              <select class="form-control" name="txtEspecification">
+                <option>Todo</option>
+                <option>Temperatura más alta</option>
+                <option>Temperatura más baja</option>
+                <option>Humedad más alta</option>
+                <option>Humedad más baja</option>
+              </select>
+            </div>
+            <div class="form-group text-center">
+              <button type="input" class="btn btn-primary btn-block" name="btnFilterBetweenDates">Filtrar por fecha</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
             <table class="table">

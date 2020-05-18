@@ -16,7 +16,22 @@
     }
 
     public static function showUnfilteredRecords($conn){
-      $query = "SELECT * FROM records ORDER BY id_record DESC LIMIT 100";
+      echo "Mostrando los <b>10</b> últimos registros.";
+      $query = "SELECT * FROM records ORDER BY id_record DESC LIMIT 10";
+      $stmt = $conn->getConnection()->prepare($query);
+      $stmt->execute();
+      $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $movements_list;
+    }
+
+    public static function showFilterLimitRecords($conn,$limit){
+      if ($limit == "Todo") {
+        echo "Mostrando todos los registros.";
+        $query = "SELECT * FROM records ORDER BY id_record DESC";
+      }else {
+        echo "Mostrando los <b>" . $limit . "</b> últimos registros.";
+        $query = "SELECT * FROM records ORDER BY id_record DESC LIMIT $limit";
+      }
       $stmt = $conn->getConnection()->prepare($query);
       $stmt->execute();
       $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);

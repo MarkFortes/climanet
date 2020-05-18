@@ -29,8 +29,15 @@
 
     $records_list = Records::showMinHumRecord($conn);
 
+  }else if (isset($_POST["btnFilterLimit"])) {
+
+    $limit = $_POST["txtLimit"];
+    $records_list = Records::showFilterLimitRecords($conn, $limit);
+
   }else{ //Si no se ha hecho ningun filtro se muestran los 100 ultimos registros
+
     $records_list = Records::showUnfilteredRecords($conn);
+
   }
 
   foreach ($records_list as $record) {
