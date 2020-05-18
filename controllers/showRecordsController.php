@@ -33,7 +33,7 @@
   }else if (isset($_POST["btnFilterLimit"])) {
 
     $limit = $_POST["txtLimit"];
-    if ($limit == "Todo") {
+    if ($limit == "Todos") {
       echo "Mostrando <b>todos</b> los registros.";
     }else {
       echo "Mostrando los <b>" . $limit . "</b> últimos registros.";

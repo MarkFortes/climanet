@@ -25,7 +25,7 @@
     }
 
     public static function showFilterLimitRecords($conn,$limit){
-      if ($limit == "Todo") {
+      if ($limit == "Todos") {
         $query = "SELECT * FROM records ORDER BY id_record DESC";
       }else {
         $query = "SELECT * FROM records ORDER BY id_record DESC LIMIT $limit";

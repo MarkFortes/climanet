@@ -32,10 +32,10 @@
               <label>Mostrar registros: </label>
               <select class="form-control" name="txtLimit">
                 <option>Todos</option>
-                <option>10 últimos</option>
-                <option>25 últimos</option>
-                <option>50 últimos</option>
-                <option>100 últimos</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
               </select>
             </div>
             <div class="form-group text-center">
