@@ -10,8 +10,9 @@
 
     $from = $_POST["txtCalendarFrom"];
     $to = $_POST["txtCalendarTo"];
-    echo "Desde: " . $from . " Hasta: " . $to . "<br>";
-    $records_list = Records::showFilterBetweenDates($conn, $from, $to);
+    $specification = $_POST["txtCalendarSpecification"];
+    echo "Mostrando <b>" . lcfirst($specification) . "</b> desde el <b>" . $from . "</b> hasta el <b>" . $to . "</b><br>";
+    $records_list = Records::showFilterBetweenDates($conn, $from, $to, $specification);
 
   }elseif (isset($_POST["btnMaxTempRecord"])) {
 
@@ -32,6 +33,11 @@
   }else if (isset($_POST["btnFilterLimit"])) {
 
     $limit = $_POST["txtLimit"];
+    if ($limit == "Todo") {
+      echo "Mostrando <b>todos</b> los registros.";
+    }else {
+      echo "Mostrando los <b>" . $limit . "</b> últimos registros.";
+    }
     $records_list = Records::showFilterLimitRecords($conn, $limit);
 
   }else{ //Si no se ha hecho ningun filtro se muestran los 100 ultimos registros

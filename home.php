@@ -27,7 +27,7 @@
     <div class="col-md-4">
       <div class="row">
         <div class="col-md-12">
-          <form action="" method="post">
+          <form action="#tableRecords" method="post">
             <div class="form-group">
               <label>Limitar registros: </label>
               <select class="form-control" name="txtLimit">
@@ -73,7 +73,7 @@
             </div>
             <div class="form-group">
               <label>Más especificaciones: </label>
-              <select class="form-control" name="txtEspecification">
+              <select class="form-control" name="txtCalendarSpecification">
                 <option>Todo</option>
                 <option>Temperatura más alta</option>
                 <option>Temperatura más baja</option>
@@ -91,7 +91,7 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
-            <table class="table">
+            <table class="table" id="tableRecords">
               <thead>
                 <tr>
                   <th scope="col">Fecha y hora</th>
