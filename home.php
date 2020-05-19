@@ -29,13 +29,13 @@
         <div class="col-md-12">
           <form action="#tableRecords" method="post">
             <div class="form-group">
-              <label>Mostrar registros: </label>
+              <label>Últimos registros visibles: </label>
               <select class="form-control" name="txtLimit">
-                <option>Todos</option>
                 <option>10</option>
                 <option>25</option>
                 <option>50</option>
                 <option>100</option>
+                <option>Todos</option>
               </select>
             </div>
             <div class="form-group text-center">

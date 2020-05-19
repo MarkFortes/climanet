@@ -34,7 +34,10 @@
 
     if ($usernameAvailable == true && $emailAvailable == true) {
       UsersManagament::createUser($conn, $username, $password, $email);
-      include_once("../layouts/correctUserCreationMessage.html");
+      session_start();
+      $id_user = UsersManagament::getId($conn, $email);
+      $_SESSION["id_user"] = $id_user;
+      header("Location:../home.php");
     }else {
       include_once("../layouts/uncorrectUserCreationMessage.html");
     }
