@@ -96,6 +96,8 @@ void loop() {
     while(true);
   }
 
+  ///////////////////////////////////////////////
+
   for(int timer = 60; timer > 0; timer--){
     lcd.setCursor(0,1);
     lcd.print("Reload in: " + String(timer) + "min");
