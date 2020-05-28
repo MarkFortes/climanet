@@ -1,5 +1,4 @@
 <?php
-
   class Records{
 
     public static function createRecord($conn,$temperature,$humidity){ //arduino llama a esta funcion para los registros
@@ -97,7 +96,5 @@
       $movements_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $movements_list;
     }
-
   }
-
 ?>

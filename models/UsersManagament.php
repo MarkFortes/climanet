@@ -1,5 +1,4 @@
 <?php
-
   class UsersManagament{
 
     public static function validateUser($conn, $email, $pass){
@@ -55,8 +54,5 @@
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       return $row["admin_user"];
     }
-
   }
-
-
 ?>

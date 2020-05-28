@@ -1,7 +1,5 @@
 <?php
-
     class ValidateData{
-
         public static function existsUsername($conn, $username){
             $query = "SELECT * FROM users WHERE username_user = :username";
             $stmt = $conn->getConnection()->prepare($query);
@@ -25,7 +23,5 @@
             return false;
           }
         }
-
     }
-
 ?>

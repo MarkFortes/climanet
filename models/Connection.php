@@ -1,7 +1,5 @@
 <?php
-
   class Connection{
-
     private $conn;
 
     function __construct(){
@@ -16,9 +14,5 @@
     function getConnection(){
       return $this->conn;
     }
-
-
   }
-
-
 ?>

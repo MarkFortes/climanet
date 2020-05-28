@@ -1,5 +1,4 @@
 <?php
-
   if (isset($_POST["btnSignup"])) {
     //Imports necessary classes
     require_once("../models/Connection.php");

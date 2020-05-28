@@ -1,5 +1,4 @@
 <?php
-
   require_once("models/Connection.php");
   require_once("models/Records.php");
   require_once("models/UsersManagament.php");
@@ -53,5 +52,4 @@
     echo "<td>" . $record["humidity_record"] . " %</td>";
     echo "</tr>";
   }
-
 ?>
